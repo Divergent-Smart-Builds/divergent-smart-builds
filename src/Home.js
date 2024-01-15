@@ -5,42 +5,84 @@ import bathroomRenoImage from './images/bathroom-reno.jpg';
 import exteriorRenoImage from './images/exterior-reno.jpg';
 import homeInteriorImage from './images/house-interior.jpg';
 import constructionImage from './images/construction-work.jpg';
+import landingImage from './images/landing-image.jpg';
+import logo from './images/logo.png';
+//import completeImage from './images/complete-work.jpg';
+//import flooringImage from './images/flooring.jpg';
 
 const Home = () => {
+    const gallery = [
+        exteriorRenoImage,
+        homeInteriorImage,
+        constructionImage,
+        bathroomRenoImage
+    ];
+
     const [showForm, setShowForm] = useState(false);
-    const [email, setEmail] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
+    // const [email, setEmail] = useState('');
+    // const [phoneNumber, setPhoneNumber] = useState('');
+    // const [name, setName] = useState('');
+    // const [perferredContact, setPreferredContact] = useState('');
+    const [selectedImage, setSelectedImage] = useState(gallery[0]);
+    const [shrink, setShrink] = useState(false);
 
-    const handleForm = () => {
-        setShowForm(true);
-    }
+    // const handleNameChange = (e) => {
+    //     setName(e.target.value);
+    // }
 
-    const handleEmailChange = (e) => {
-        setEmail(e.target.value);
-    }
+    // const handleEmailChange = (e) => {
+    //     setEmail(e.target.value);
+    // }
 
-    const handlePhoneNumberChange = (e) => {
-        setPhoneNumber(e.target.value);
-    }
+    // const handlePhoneNumberChange = (e) => {
+    //     setPhoneNumber(e.target.value);
+    // }
 
     const handleSubmission = (e) => {
         console.log("unIMPLEMENTED")
     }
 
+    const handleScroll = () => {
+        if (window.scrollY > 50) {
+            setShrink(true);
+        } else {
+            setShrink(false);
+        }
+    };
+
     useEffect(() => {
         // Clear the form fields
         setShowForm(false);
-        setEmail('');
-        setPhoneNumber('');
+        // setEmail('');
+        // setPhoneNumber('');
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
 
     }, []);
 
     const form = showForm ? (
         <div className="confirm-backdrop">
             <div className="confirm-window">
-            <Button onClick={() => { setShowForm(false); }} size="sm" color='danger' className="close-button">X</Button>
+                <Button onClick={() => { setShowForm(false); }} size="sm" color='danger' className="close-button">X</Button>
                 <>
                     <form onSubmit={handleSubmission}>
+                        <p style={{textAlign: "center"}}>Please give us a call or email us with the buttons below</p>
+                        {/*<div className="form-group">
+                            <label htmlFor="email">Name:</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="name"
+                                required
+                                value={name}
+                                onChange={handleNameChange}
+                            />
+                        </div>
+
                         <div className="form-group">
                             <label htmlFor="email">Email:</label>
                             <input
@@ -65,12 +107,20 @@ const Home = () => {
                                 onChange={handlePhoneNumberChange}
                             />
                         </div>
-
-                        <ButtonGroup style={{ marginLeft: "50%", marginTop: "25px" }}>
-                            <Button type="submit" size="lg" className="btn btn-primary" color='primary'></Button>
-                        </ButtonGroup>
-                        <ButtonGroup>
-                            <Button>PHONENUMBE</Button>
+                        <div>
+                            <p>Please select your perferred contact method</p>
+                        </div>
+                        <div>
+                            <ButtonGroup style={{ marginLeft: "75%", marginTop: "25px" }}>
+                                <p>Or Call Us Now</p>
+                                <Button onClick={() => { setPreferredContact("email") }} type="submit" size="lg" className="btn btn-primary" color='primary'>Submit</Button>
+                            </ButtonGroup>
+                        </div>
+                        <div>
+                        </div> */}
+                        <ButtonGroup className='custom-button-group'>
+                            <Button className='Estimate-Button'><a style={{color: "black"}} href="tel:4037080548">Call us at (403)-708-0548</a></Button>
+                            <Button className='Estimate-Button-Right'><a style={{color: "black"}} href="mailto:divergent.smart.builds.786@gmail.com">divergent.smart.builds.786@gmail.com</a></Button>
                         </ButtonGroup>
                     </form>
                 </>
@@ -81,20 +131,41 @@ const Home = () => {
     return (
         <div>
             {form}
-            <Navbar color="faded" light style={{ width: "100%", position: "fixed", top: "0", display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "white", paddingLeft: "15%", paddingRight: "15%" }}>
-                <NavbarBrand tag={Link} to="/"><img src='https://t3.ftcdn.net/jpg/00/79/67/48/360_F_79674837_Jn4HbqZGciL1jMeobbM6xNOUUjen936J.jpg' style={{ height: "75px", width: "100%", }} alt='Divergent Smart Builds'></img></NavbarBrand>
-                <button className='Estimate-Button'>Request A Quote</button>
+            <Navbar color="faded" light fixed="top" style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: "white",
+                paddingLeft: shrink ? '20%' : "15%",
+                paddingRight: shrink ? '20%' : "15%",
+                zIndex: "1500",
+                height: shrink ? '65px' : '100px',
+                transition: 'padding 0.5s ease, height 1s ease'
+            }}>
+                <NavbarBrand tag={Link} to="/">
+                    <img src={logo}
+                        alt='Divergent Smart Builds'
+                        style={{
+                            height: shrink ? '75px' : '125px',
+                            transition: 'height 0.5s ease' // Smooth transition for image height
+                        }}
+                    />
+                </NavbarBrand>
+                <button onClick={() => { setShowForm(true) }} className='Estimate-Button' style={{
+                    minWidth: '130px',
+                    width: shrink ? '10%' : '15%',
+                    height: shrink ? '25px' : '50px',
+                    marginTop: shrink ? '-25px' : '-50px',
+                    transition: 'width 0.5s ease, height 0.5s ease, min-width 0.5s ease' // Smooth transition for button scaling
+                }}>Request A Quote</button>
             </Navbar>
-            <img src='https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?cs=srgb&dl=pexels-binyamin-mellish-106399.jpg&fm=jpg' style={{ marginTop: "100px", height: "750px", width: "100%", position: "relative" }} alt='Aesthetically Pleasing Home'></img>
-            <Container style={{ position: "absolute", top: "150px", textAlign: "center", width: "100%" }}>
-                <Row>
-                    <Col style={{ paddingLeft: "10%" }}>
-                        <h1 style={{ marginBottom: "15px" }}>Divergent Smart Builds Ltd.</h1>
-                        <p style={{ marginBottom: "25px" }}> text</p>
-                        <button className='Estimate-Button' onClick={() => handleForm()}>GET A FREE ESTIMATE</button>
-                    </Col>
-                </Row>
-            </Container>
+            <img src={landingImage} style={{ marginTop: "100px", height: "750px", width: "100%", position: "relative" }} alt='Aesthetically Pleasing Home'></img>
+            <div style={{ position: "absolute", top: "150px", textAlign: "center", width: "100%" }}>
+                <h1 style={{ marginBottom: "15px", color: "#2EC0F9" }}>Divergent Smart Builds</h1>
+                <p style={{ marginBottom: "25px", color: "#2EC0F9" }}>Building Dreams</p>
+                <button className='Estimate-Button' onClick={() => { setShowForm(true) }}>GET A FREE ESTIMATE</button>
+            </div>
             <Container style={{ paddingLeft: "20%", paddingRight: "20%", marginBottom: "25px" }}>
                 <Row style={{ marginTop: "50px", textAlign: "center" }}>
                     <Col xs="12" md="6" style={{ alignSelf: "center" }}>
@@ -115,6 +186,27 @@ const Home = () => {
                     </Col>
                 </Row>
             </Container>
+            <Container style={{ marginBottom: "50px" }}>
+                <hr className='section-divider' />
+                <h1 style={{ textAlign: "center", marginBottom: "50px" }}>Gallery</h1>
+                <Row>
+                    <Col md="10">
+                        <img src={selectedImage} alt="selected" style={{ width: '100%', maxHeight: '700px' }} />
+                    </Col>
+
+                    <Col md="2" style={{ overflowY: 'auto', maxHeight: '700px' }}>
+                        {gallery.map((image, index) => (
+                            <div key={index} className={selectedImage === image ? 'selected-thumbnail' : ''} onClick={() => setSelectedImage(image)}>
+                                <img
+                                    src={image}
+                                    alt={`Thumbnail ${index + 1}`}
+                                    style={{ width: '100%', height: 'auto', cursor: 'pointer', marginBottom: '10px', filter: selectedImage === image ? 'brightness(50%)' : 'none' }}
+                                />
+                            </div>
+                        ))}
+                    </Col>
+                </Row>
+            </Container>
             <div style={{ textAlign: "center", backgroundColor: "#006fb9", color: "#c3f6ff" }}>
                 <h1 style={{ paddingTop: "35px" }}>Our Home Renovations Process</h1>
                 <h5 style={{ paddingTop: "20px", marginBottom: "50px" }}>Trust us to streamline your process for worry free construction work. While we create your visions, going above and beyond</h5>
@@ -128,25 +220,25 @@ const Home = () => {
                         </Col>
                         <Col xs="12" md="3">
                             <h1>2</h1>
+                            <b>Construction Agreement</b>
+                            <p></p>
+                            <p>A date is set and construction work is started. We will update you on all the steps along the way.</p>
+                        </Col>
+                        <Col xs="12" md="3">
+                            <h1>3</h1>
                             <b>Discussion</b>
                             <p></p>
                             <p>Let's finalize your plans and understand the exact visions desired, making sure everything is excellent.</p>
                         </Col>
                         <Col xs="12" md="3">
-                            <h1>3</h1>
+                            <h1>4</h1>
                             <b>Project Development</b>
                             <p></p>
                             <p>We will create variations of designs and plans. Then the best of the best to be chosen by you.</p>
                         </Col>
-                        <Col xs="12" md="3">
-                            <h1>4</h1>
-                            <b>Construction Agreement</b>
-                            <p></p>
-                            <p>A date is set and construction work is started. We will update you on all the steps along the way.</p>
-                        </Col>
                     </Row>
                 </Container>
-                <button style={{ marginBottom: "50px" }} className='Estimate-Button'>GET A FREE ESTIMATE</button>
+                <button onClick={() => { setShowForm(true) }} style={{ marginBottom: "50px" }} className='Estimate-Button'>GET A FREE ESTIMATE</button>
             </div>
             <Container style={{ paddingLeft: "15%", paddingRight: "15%", marginTop: "50px" }}>
                 <Row>
@@ -227,10 +319,36 @@ const Home = () => {
                     </Col>
                 </Row>
             </Container>
+            <Container>
+                <Row>
+                    <Col>
+                        <img src='' alt='placeholder' style={{ width: "50px", height: "100%", alignSelf: "center" }}></img>
+                    </Col>
+                    <Col>
+                        <img src='' alt='placeholder'></img>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <img src='' alt='placeholder'></img>
+                    </Col>
+                    <Col>
+                        <img src='' alt='placeholder'></img>
+                    </Col>
+                </Row>
+            </Container>
+            <Container>
+                <Row>
+                    <Col>
+                        <h1>About Divergent Smart Builds</h1>
+                        <p></p>
+                    </Col>
+                </Row>
+            </Container>
             <footer style={{ backgroundColor: "#006fb9", marginTop: "75px" }}>
                 <Container>
                     <Row>
-                        <p>footer</p>
+                        <h1>Divergent Smart Builds</h1>
                         <br></br>
                         <br></br>
                         <br></br>
