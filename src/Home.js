@@ -131,11 +131,11 @@ const Home = () => {
                         <b>We are a construction company, able to help with all of your needs</b>
                         <p></p>
                         <ul>
-                            <li>Complete House Work</li>
-                            <li>Permit Acquisition With City of Calgary</li>
+                            <li>Complete House Construction</li>
+                            <li>Permit Acquisition</li>
                             <li>Ceiling Textures</li>
                             <li>Full House Painting</li>
-                            <li>Renovation/Construction
+                            <li>Renovation/Remodeling
                                 <ul>
                                     <li>Kitchen</li>
                                     <li>Bathroom</li>
@@ -150,7 +150,7 @@ const Home = () => {
                                     <li>Roofing</li>
                                     <li>Siding</li>
                                     <li>Decks</li>
-                                    <li>Concrete
+                                    <li>Concrete/Foundation
                                         <ul>
                                             <li>Sidewalks</li>
                                             <li>Stairs</li>
@@ -160,7 +160,6 @@ const Home = () => {
                                     </li>
                                 </ul>
                             </li>
-                            <li>All Your Concrete Needs</li>
                             <li>Residential & Commercial
                                 <ul>
                                     <li>Framing</li>
@@ -168,7 +167,7 @@ const Home = () => {
                                     <li>Mudding</li>
                                     <li>Taping</li>
                                     <li>Accent Walls</li>
-                                    <li>Epoxy Flooring</li>
+                                    <li>Epoxy Finishes</li>
                                 </ul>
                             </li>
                             <li>Store and Venue Builds
@@ -287,7 +286,7 @@ const Home = () => {
                 <Row>
                     <Col xs="12" md="6" className="right-align-text">
                         <h4>Residential Remodeling</h4>
-                        <p>Embark on a journey of transformation with our Residential Remodeling services, where your vision for a perfect home is brought to life. Our expert team is committed to reinventing your living spaces with an emphasis on quality, modern functionality, and personalized style. Whether it's a cozy kitchen renovation or a comprehensive home makeover, we ensure a seamless blend of aesthetics and value, making your home a reflection of your dreams.</p>
+                        <p>Embark on a journey of transformation with our Residential Remodeling services, where your vision for a perfect home is brought to life. Our expert team is committed to reinventing your living spaces with an emphasis on quality, modern functionality, and personalized style within your budget. Whether it's a cozy kitchen renovation or a comprehensive home makeover, we ensure a seamless blend of aesthetics and value, making your home a reflection of your dreams.</p>
                     </Col>
                     <Col xs="12" md="6">
                         <img src={paintImage} alt='Residential Housing Renovation' style={{ width: "100%", marginTop: "25px", marginBottom: "25px" }}></img>
@@ -298,8 +297,8 @@ const Home = () => {
                         <img src={exteriorRenoImage} alt='Residential Housing Renovation' style={{ width: "100%", marginTop: "25px", marginBottom: "25px" }}></img>
                     </Col>
                     <Col xs="12" md="6" className="left-align-text">
-                        <h4>Concrete</h4>
-                        <p>Our Concrete Solutions lay the foundation for enduring beauty and functionality in your outdoor spaces. Specializing in driveways, sidewalks, pathways, and backyard patios, we deliver precision and durability to enhance your property's curb appeal and usability. Whether you're envisioning a sleek new driveway or a charming garden path, our expert craftsmanship ensures a flawless finish that withstands the test of time and elements, seamlessly integrating with your landscape to create the perfect outdoor setting.</p>
+                        <h4>Concrete & Masonry</h4>
+                        <p>Our concrete & masonry solutions lay the foundation for enduring beauty and functionality in your outdoor spaces. Specializing in driveways, sidewalks, pathways, and backyard patios, we deliver precision and durability to enhance your property's curb appeal and usability. Whether you're envisioning a sleek new driveway or a charming garden path, our expert craftsmanship ensures a flawless finish that withstands the test of time and elements, seamlessly integrating with your landscape to create the perfect outdoor setting.</p>
                     </Col>
                 </Row>
                 <Row>
