@@ -112,7 +112,7 @@ const Home = () => {
                     />
                 </NavbarBrand>
                 <button onClick={() => { setShowForm(true) }} className='Estimate-Button' style={{
-                    minWidth: '120px',
+                    minWidth: '100px',
                     width: shrink ? '10%' : '15%',
                     height: shrink ? '25px' : '50px',
                     marginTop: shrink ? '-10px' : '-25px',
