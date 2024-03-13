@@ -112,10 +112,11 @@ const Home = () => {
                     />
                 </NavbarBrand>
                 <button onClick={() => { setShowForm(true) }} className='Estimate-Button' style={{
-                    minWidth: '130px',
+                    minWidth: '120px',
                     width: shrink ? '10%' : '15%',
                     height: shrink ? '25px' : '50px',
                     marginTop: shrink ? '-10px' : '-25px',
+                    fontSize: shrink ? '10px' : '',
                     transition: 'width 0.5s ease, height 0.5s ease, min-width 0.5s ease' // Smooth transition for button scaling
                 }}>Request A Quote</button>
             </Navbar>
@@ -217,7 +218,7 @@ const Home = () => {
                     </Col>
                 </Row>
             </Container>
-            <div style={{ textAlign: "center", backgroundColor: "#006fb9", color: "#c3f6ff" }}>
+            <div style={{ textAlign: "center", backgroundColor: "#006fb9", color: "#c3f6ff", paddingLeft: '10px', paddingRight: '10px' }}>
                 <h1 style={{ paddingTop: "35px" }}>Our Home Renovations Process</h1>
                 <h5 style={{ paddingTop: "20px", marginBottom: "50px" }}>Trust us to streamline your process for worry free construction work. While we create your visions, going above and beyond</h5>
                 <Container style={{ marginBottom: "50px" }}>
