@@ -76,10 +76,10 @@ const Home = () => {
                     <form onSubmit={handleSubmission}>
                         <p style={{ textAlign: "center" }}>Please give us a call or email us with the buttons below</p>
                         <ButtonGroup className='custom-button-group'>
-                            <Button className='Estimate-Button'><a style={{ color: "black" }} href="tel:4037080548">Call us at (403)-708-0548</a></Button>
+                            <Button className='Estimate-Button'><a style={{ color: "black" }} href="tel:4037080548">Call us at<br />(403)-708-0548</a></Button>
                         </ButtonGroup>
                         <ButtonGroup className='custom-button-group'>
-                            <Button className='Estimate-Button'><a style={{ color: "black" }} href="mailto:divergent.smart.builds.786@gmail.com">divergent.smart.builds.786@gmail.com</a></Button>
+                            <Button className='Estimate-Button'><a style={{ color: "black", overflowWrap: "anywhere"; }} href="mailto:divergent.smart.builds.786@gmail.com">divergent.smart.builds.786@gmail.com</a></Button>
                         </ButtonGroup>
                     </form>
                 </>
