@@ -120,7 +120,7 @@ const Home = () => {
                 }}>Request A Quote</button>
             </Navbar>
             <img src={landingImage} style={{ marginTop: "175px", height: "100%", width: "100%", position: "relative" }} alt='Aesthetically Pleasing Home'></img>
-            <div style={{ position: "absolute", top: "150px", textAlign: "center", width: "100%" }}>
+            <div style={{ position: "absolute", top: "225px", textAlign: "center", width: "100%" }}>
                 <h1 style={{ marginBottom: "15px", color: "#2EC0F9" }}>Divergent Smart Builds</h1>
                 <p style={{ marginBottom: "25px", color: "#2EC0F9" }}>Building Dreams</p>
                 <button className='Estimate-Button' onClick={() => { setShowForm(true) }}>GET A FREE ESTIMATE</button>
