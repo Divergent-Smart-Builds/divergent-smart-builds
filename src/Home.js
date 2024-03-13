@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Container, Row, Col, Navbar, NavbarBrand, Button, ButtonGroup } from 'reactstrap';
+import { Container, Row, Col, Navbar, NavbarBrand, Button, ButtonGroup, NavItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import logo from './images/logo.png'
 import bathroomRenoImage from './images/bathroom-reno.jpg';
@@ -96,28 +96,27 @@ const Home = () => {
                 justifyContent: "center",
                 alignItems: "center",
                 backgroundColor: "white",
-                paddingLeft: shrink ? '20%' : "15%",
-                paddingRight: shrink ? '20%' : "15%",
+                paddingRight: "5vw",
+                paddingLeft: "5vw",
                 zIndex: "1500",
-                height: shrink ? '65px' : '100px',
+                height: shrink ? '100px' : '175px',
                 transition: 'padding 0.5s ease, height 1s ease'
             }}>
                 <NavbarBrand tag={Link} to="/">
                     <img src={logo}
                         alt='Divergent Smart Builds'
                         style={{
-                            height: shrink ? '75px' : '125px',
-                            transition: 'height 0.5s ease' // Smooth transition for image height
+                            maxWidth: shrink ? "25vw" : "40vw",
+                            maxHeight: shrink ? "120px" : "175px",
+                            transition: 'width 0.5s ease, height 0.5s ease, max-width 0.5s ease, max-height 0.5s ease',
                         }}
                     />
                 </NavbarBrand>
                 <button onClick={() => { setShowForm(true) }} className='Estimate-Button' style={{
-                    minWidth: '100px',
-                    width: shrink ? '10%' : '15%',
+                    minWidth: shrink ? "100px" : "75px",
                     height: shrink ? '25px' : '50px',
-                    marginTop: shrink ? '-10px' : '-25px',
-                    fontSize: shrink ? '10px' : '',
-                    transition: 'width 0.5s ease, height 0.5s ease, min-width 0.5s ease' // Smooth transition for button scaling
+                    fontSize: shrink ? '10px' : '15px',
+                    transition: 'width 0.5s ease, height 0.5s ease, min-width 0.5s ease'
                 }}>Request A Quote</button>
             </Navbar>
             <img src={landingImage} style={{ marginTop: "100px", height: "100%", width: "100%", position: "relative" }} alt='Aesthetically Pleasing Home'></img>
