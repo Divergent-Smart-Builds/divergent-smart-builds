@@ -115,11 +115,11 @@ const Home = () => {
                 <button onClick={() => { setShowForm(true) }} className='Estimate-Button' style={{
                     minWidth: shrink ? "100px" : "75px",
                     height: shrink ? '25px' : '50px',
-                    fontSize: shrink ? '10px' : '15px',
+                    fontSize: shrink ? '5px' : '10px',
                     transition: 'width 0.5s ease, height 0.5s ease, min-width 0.5s ease'
                 }}>Request A Quote</button>
             </Navbar>
-            <img src={landingImage} style={{ marginTop: "100px", height: "100%", width: "100%", position: "relative" }} alt='Aesthetically Pleasing Home'></img>
+            <img src={landingImage} style={{ marginTop: "175px", height: "100%", width: "100%", position: "relative" }} alt='Aesthetically Pleasing Home'></img>
             <div style={{ position: "absolute", top: "150px", textAlign: "center", width: "100%" }}>
                 <h1 style={{ marginBottom: "15px", color: "#2EC0F9" }}>Divergent Smart Builds</h1>
                 <p style={{ marginBottom: "25px", color: "#2EC0F9" }}>Building Dreams</p>
