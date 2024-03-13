@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Container, Row, Col, Navbar, NavbarBrand, Button, ButtonGroup, NavItem } from 'reactstrap';
+import { Container, Row, Col, Navbar, NavbarBrand, Button, ButtonGroup } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import logo from './images/logo.png'
 import bathroomRenoImage from './images/bathroom-reno.jpg';
